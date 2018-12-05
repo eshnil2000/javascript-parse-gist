@@ -1,19 +1,30 @@
 <!doctype html>
 
-<title>Parge github gist</title>
+<title>Code DappsUni</title>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
 <script>
+
+var url;
+var code;
 $.getJSON(
     'https://api.github.com/gists/319e72497131a1d2f9e7e0f18038f1c0', 
     function(data) { 
-    	var code=data.files.test.content;
-    	console.log(code);
-    	document.getElementById("demotext").innerHTML = code;
+    	 url=data.files.test.raw_url;
+    	console.log(url);
+    	$.get(url, function(data,status){
+			console.log(data);
+			document.getElementById("demotext").innerHTML = data;
+		});
+
+    	//document.getElementById("demotext").innerHTML = code;
      }
+
 );
+
+
 </script>
 
 <div id=demotext> hi <div>
