@@ -1,0 +1,19 @@
+<!doctype html>
+
+<title>Parge github gist</title>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script>
+$.getJSON(
+    'https://api.github.com/gists/319e72497131a1d2f9e7e0f18038f1c0', 
+    function(data) { 
+    	var code=data.files.test.content;
+    	console.log(code);
+    	document.getElementById("demotext").innerHTML = code;
+     }
+);
+</script>
+
+<div id=demotext> hi <div>
