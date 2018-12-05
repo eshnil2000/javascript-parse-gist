@@ -14,10 +14,6 @@ for i in range(10):<br>
 &emsp;&emsp;print(x);
 ```
 
-### When this renders, it returns:
-import hashlib;
-import unittest;
-from unittest import TestCase;
-for i in range(10):
- print(i)
-  print(x);
+#### When this renders, it returns:
+new lines without the <br>
+tabs without the &emsp
