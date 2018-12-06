@@ -1,0 +1,24 @@
+  <script>
+    var editor = CodeMirror.fromTextArea(document.getElementById("demotext"), {
+      lineNumbers: true,
+      theme: "night",
+      mode: "text/html",
+      viewportMargin: Infinity,
+      matchBrackets: true
+    });
+    var url;
+var code;
+$.getJSON(
+    'https://api.github.com/gists/319e72497131a1d2f9e7e0f18038f1c0',
+    function(data) {
+         url=data.files.test.raw_url;
+        console.log(url);
+        $.get(url, function(data,status){
+                        console.log(data);
+                        editor.setValue(data);
+                });
+        //document.getElementById("demotext").innerHTML = code;
+     }
+);
+
+  </script>
